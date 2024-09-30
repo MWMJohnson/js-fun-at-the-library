@@ -12,11 +12,11 @@ function buildMainCharacter(nameInput, ageInput, pronounsInput) {
 }
 
 function saveReview(review, reviews) {
-  reviews.push(review);
-  let uniqReviews = [... new Set(reviews)];
+  reviews.push(review); // Add new review
+  let uniqReviews = [... new Set(reviews)]; // Create array with unique values
   reviews.length = 0; // Clear the array
   reviews.push(...uniqReviews); // Add the unique reviews back
-  
+
   return reviews;
 }
 
