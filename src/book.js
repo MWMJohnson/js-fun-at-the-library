@@ -1,19 +1,29 @@
 function createTitle(titleName) {
-  return "The " + titleName;
+  let title = "The " + titleName;
+  return title;
 }
 
 function buildMainCharacter(nameInput, ageInput, pronounsInput) {
-  character = {};
+  let character = {};
   character.name = nameInput;
   character.age = ageInput;
   character.pronouns = pronounsInput;
   return character;
 }
 
+function saveReview(review, reviews) {
+  reviews.push(review);
+  let uniqReviews = [... new Set(reviews)];
+  reviews.length = 0; // Clear the array
+  reviews.push(...uniqReviews); // Add the unique reviews back
+  
+  return reviews;
+}
+
 module.exports = {
   createTitle,
   buildMainCharacter,
-  // saveReview,
+  saveReview,
   // calculatePageCount,
   // writeBook,
   // editBook
